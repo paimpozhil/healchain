@@ -19,15 +19,25 @@
 			  </v-list-tile-content>
 			</v-list-tile>
 	  
-			<v-list-tile>			
-			  <v-list-tile-title>
-				<VueQrcode :value=coinbase :options="{ size: 100 }"></VueQrcode>
-			  </v-list-tile-title>
-			  <v-list-tile-content>
-				AB+
-			  </v-list-tile-content>
-			</v-list-tile>
+		  </v-list>
+		  <v-layout row wrap>
+			  <v-flex xs6 >
+				<v-card dark color="secondary">
+				  <v-card-text class="px-0">
+					  <VueQrcode :value=coinbase :options="{ size: 200 }"></VueQrcode>				  
+				  </v-card-text>
+				</v-card>
+			  </v-flex>
+			  <v-flex xs1 >
+				<v-card dark color="secondary">
+				  <v-card-text class="px-0">
+					  AB+
+				  </v-card-text>
+				</v-card>
+			  </v-flex>
+		   </v-layout>
 	  
+		  <v-list>
 			<v-list-tile>
 			  <v-list-tile-title>
 				  Heart Patient

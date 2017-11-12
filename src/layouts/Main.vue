@@ -2,10 +2,8 @@
   <div class="container">
       <nav class="contact">
         <v-link href="/">Home</v-link>
-        <v-link href="/walletinfouser">walletinfouser</v-link>
-        <v-link href="/donateblood">donateblood</v-link>
-        <v-link href="/sendtoken">sendtoken</v-link>
-        <v-link href="/transactions">transactions</v-link>
+        <v-link href="/sendtoken">Send Token</v-link>
+        <v-link href="/transactions">Notes</v-link>
       </nav>
 
     <slot></slot>
