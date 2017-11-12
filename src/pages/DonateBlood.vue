@@ -31,20 +31,10 @@
 				Unit :
 			  </v-list-tile-title>
 			  <v-list-tile-content>  
-				<v-text-field label="0" single-line v-model="unit"></v-text-field>  
+				<v-text-field label="0" single-line v-model.number="unit"></v-text-field>   
 			  </v-list-tile-content>
 			</v-list-tile>
-	  
-			<v-list-tile>
-			  <v-list-tile-title>
-				Tokens
-			  </v-list-tile-title>
-			  <v-list-tile-content>  
-				<v-text-field label="0" single-line v-model.number="token"></v-text-field>  
-				{{ tokens }}
-			  </v-list-tile-content>
-			</v-list-tile>
-	  
+	  	  
 			<v-list-tile>  
 			  <v-spacer></v-spacer>  
 			  <v-list-tile-action>
@@ -97,23 +87,19 @@ export default {
         return
       }
 
-      if (!_.isNumber(this.token) || this.token <= 0) {
-        alert('Invalid token!')
-        this.token = null
+      if (!_.isNumber(this.unit) || this.unit <= 0) {
+        alert('Invalid unit!')
+        this.unit = null
         return
       }
-		
-          console.log(this.token)
-          console.log(this.addr)
-          console.log(this.unit)
-      CONTRACT.transfer(this.addr, web3.toWei(this.token, 'ether'), (err, res) => {
+      CONTRACT.transfer(this.addr, web3.toWei(this.unit*1000, 'ether'), (err, res) => {
         if (!err) {
           console.log(res)
-          this.addr = this.token = null
+          this.addr = this.unit = null
           return
         }
         console.log(err)
-        this.addr = this.token = null
+        this.addr = this.unit = null
       })
     },    
     getTokenBalance () {
