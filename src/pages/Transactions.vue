@@ -29,7 +29,9 @@ export default {
       headers: [
         { align: 'left', text: 'To', value: 'to' },
         { align: 'left', text: 'From', value: 'from' },
-        { align: 'left', text: 'Amount', value: 'amount' }
+        { align: 'left', text: 'Amount', value: 'amount' },
+        { align: 'left', text: 'Date', value: '' },
+        { align: 'left', text: 'Notes', value: '' },
       ],
       items: []
     }

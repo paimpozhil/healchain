@@ -1,9 +1,18 @@
 <template>
   <div class="container">
-      <nav class="contact">
+	<!-- Handlebars template -->
+	<nav class="contact" v-if="isLab === 1"> 
         <v-link href="/">Home</v-link>
         <v-link href="/sendtoken">Send Token</v-link>
-        <v-link href="/transactions">Notes</v-link>
+        <v-link href="/transactions">History</v-link>
+        <v-link href="/donateblood">Donate Blood</v-link>
+	</nav>
+	<nav class="contact" v-else> 
+        <v-link href="/">Home</v-link>
+        <v-link href="/sendtoken">Send Token</v-link>
+        <v-link href="/transactions">History</v-link>
+	</nav>
+
       </nav>
 
     <slot></slot>
@@ -12,12 +21,40 @@
 
 <script>
   import VLink from '../components/VLink.vue'
+import { CONTRACT } from '../contract'
 
   export default {
     components: {
       VLink
+    },
+    
+  data () {
+    return {
+      isLab: 0,
     }
+  },
+
+  mounted () {
+    this.checkIsLab()
+  },
+
+  methods: {
+    checkIsLab () {
+      CONTRACT.is_lab((err, bal) => {
+		  if(bal){
+			 this.isLab =  1;
+		  }
+      })
+    },
+    setIsLab () {
+      CONTRACT.set_lab(1, (err, bal) => {
+        console.log(err);
+      })
+    },
+
   }
+}
+
 </script>
 
 <style scoped>

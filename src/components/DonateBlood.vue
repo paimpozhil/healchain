@@ -40,6 +40,7 @@
           </v-list-tile-title>
           <v-list-tile-content>  
             <v-text-field label="0" single-line v-model.number="token"></v-text-field>  
+            {{ tokens }}
           </v-list-tile-content>
         </v-list-tile>
   
@@ -65,12 +66,18 @@ export default {
       coinbase: 0x00,
       addr: null,
       unit: null,
-      token: null
+      token: null,
+      tokens: 0,
     }
   },
   
    mounted () {
     this.coinbase = CONTRACT._eth.coinbase
+    this.getTokenBalance()
+    
+    CONTRACT.Transfer((err, res) => {
+      this.getTokenBalance()
+    });
 
   },
 
@@ -87,7 +94,10 @@ export default {
         this.token = null
         return
       }
-
+		
+          console.log(this.token)
+          console.log(this.addr)
+          console.log(this.unit)
       CONTRACT.transfer(this.addr, web3.toWei(this.token, 'ether'), (err, res) => {
         if (!err) {
           console.log(res)
@@ -96,6 +106,14 @@ export default {
         }
         console.log(err)
         this.addr = this.token = null
+      })
+    },    
+    getTokenBalance () {
+      CONTRACT.balanceOf(this.coinbase, (err, tkns) => {
+        if (!err) {
+          this.tokens = web3.fromWei(tkns, 'ether').toNumber()
+        }
+        console.log(err)
       })
     }
   }
