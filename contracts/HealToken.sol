@@ -12,10 +12,11 @@ import "./StandardToken.sol";
  */
 contract HealToken is StandardToken {
 
-  string public name = "Func Token";
-  string public symbol = "FUNC";
+  string public name = "Heal Token";
+  string public symbol = "Heal";
   uint256 public decimals = 18;
   uint256 public INITIAL_SUPPLY = 100000000 * 1 ether;
+  mapping(address => bool) islab;
 
   /**
    * @dev Contructor that gives msg.sender all of existing tokens.
@@ -25,4 +26,13 @@ contract HealToken is StandardToken {
     balances[msg.sender] = INITIAL_SUPPLY;
   }
 
+  function is_lab() constant returns (bool res){
+    return islab[msg.sender];
+  }
+  
+  function set_lab(bool labstatus)    {
+	islab[msg.sender] = labstatus;
+  }
+  
+  
 }
