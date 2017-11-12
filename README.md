@@ -42,3 +42,19 @@ Upon receiving blood donations, As per government norms 1 unit blood's rebate va
 
 ### Donor/Patient Pays in HEAL Token
 During health checkups, emergency payments Patient can pay in HEAL Token
+
+## Toshi 
+### SOS
+```
+* Displays QR code to access public health information
+* Sends emergency alert to configured friends & family with current location
+* Sends emergency alert to near by ambulance service / hospital
+```
+### MyHEALChain
+```
+Displays Healchain info / wallet
+```
+
+
+
+
