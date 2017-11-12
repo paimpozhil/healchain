@@ -1,5 +1,6 @@
 var path = require('path')
 var webpack = require('webpack')
+var VueQrcode = require('@xkeshi/vue-qrcode')
 
 module.exports = {
   entry: './src/main.js',
