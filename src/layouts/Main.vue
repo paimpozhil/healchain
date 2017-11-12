@@ -5,7 +5,8 @@
         <v-link href="/">Home</v-link>
         <v-link href="/sendtoken">Send Token</v-link>
         <v-link href="/transactions">History</v-link>
-        <v-link href="/donateblood">Donate Blood</v-link>
+        <v-link href="/donateblood">Donor Rebate</v-link>
+        <v-link href="/healreport">Heal Report</v-link>
 	</nav>
 	<nav class="contact" v-else> 
         <v-link href="/">Home</v-link>
@@ -100,4 +101,18 @@ import { CONTRACT } from '../contract'
 		border-radius:0 2px 2px 0;
 	}
 
+	select {
+		-webkit-appearance: menulist;
+		box-sizing: border-box;
+		align-items: center;
+		white-space: pre;
+		-webkit-rtl-ordering: logical;
+		color: black;
+		background-color: white;
+		cursor: default;
+		border-width: 1px;
+		border-style: solid;
+		border-color: initial;
+		border-image: initial;
+	}
 </style>

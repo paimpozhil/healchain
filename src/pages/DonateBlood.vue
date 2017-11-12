@@ -3,13 +3,13 @@
 	  <v-flex xs6>
 		<v-card class="card--flex-toolbar">
 		  <v-toolbar card class="light-blue">
-			<v-toolbar-title class="white--text">Donate Blood</v-toolbar-title>
+			<v-toolbar-title class="white--text">Donor Rebate</v-toolbar-title>
 		  </v-toolbar>
 		  <v-list>
 			  
 			<v-list-tile>
 			  <v-list-tile-title>
-				From:
+				From: Hospital/Lab
 			  </v-list-tile-title>
 			  <v-list-tile-content>  
 				<input v-model="coinbase" placeholder="edit me" :value=coinbase>
@@ -19,7 +19,7 @@
 			
 			<v-list-tile>
 			  <v-list-tile-title>
-				To :
+				To : Donor
 			  </v-list-tile-title>
 			  <v-list-tile-content>  
 				<v-text-field label="0" single-line v-model="addr"></v-text-field>  
@@ -28,13 +28,21 @@
 			
 			<v-list-tile>
 			  <v-list-tile-title>
-				Unit :
+				Units of Blood :
 			  </v-list-tile-title>
 			  <v-list-tile-content>  
 				<v-text-field label="0" single-line v-model.number="unit"></v-text-field>   
 			  </v-list-tile-content>
 			</v-list-tile>
 	  	  
+			<v-list-tile>
+			  <v-list-tile-title>
+				Heal Tokens Rebate:
+			  </v-list-tile-title>
+			  <v-list-tile-content>  
+				 {{ tokenrebate }} 
+			  </v-list-tile-content>
+			</v-list-tile>
 			<v-list-tile>  
 			  <v-spacer></v-spacer>  
 			  <v-list-tile-action>
@@ -46,6 +54,7 @@
 	  
 		</v-card>
 	  </v-flex>
+	  
 	</main-layout>
 </template>
 <script>
@@ -62,6 +71,7 @@ export default {
       unit: null,
       token: null,
       tokens: 0,
+      tokenrebate: 0,
     }
   },
   
@@ -81,12 +91,12 @@ export default {
 
   methods: {
     sendTokens () {
+		this.tokenrebate = this.unit*1000;
       if (!web3.isAddress(this.addr)) {
         alert('Invalid address!')
         this.addr = null
         return
       }
-
       if (!_.isNumber(this.unit) || this.unit <= 0) {
         alert('Invalid unit!')
         this.unit = null

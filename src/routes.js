@@ -5,4 +5,5 @@ export default {
   '/donateblood': 'DonateBlood',
   '/sendtoken': 'SendTokens',
   '/transactions': 'Transactions',
+  '/healreport': 'healreport',
 }
