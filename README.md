@@ -11,15 +11,15 @@ QR Code based : Public Health Information
 Stored in: HyperLedger
 UI : Toshi SOS + Fabric
 
-Blood Group      : B+
+*Blood Group      : B+
 
-Diabetic Patient : Yes / No
+*Diabetic Patient : Yes / No
 
-Heart Patient    : Yes / No
+*Heart Patient    : Yes / No
 
-Allergic To      : [             ]
+*Allergic To      : [             ]
 
-Organ Donor      : Yes / No
+*Organ Donor      : Yes / No
 
 
 Private Health Information
