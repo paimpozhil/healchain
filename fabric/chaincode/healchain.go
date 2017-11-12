@@ -143,11 +143,11 @@ func (s *SmartContract) initLedger(APIstub shim.ChaincodeStubInterface) sc.Respo
 //Create new account for users
 func (s *SmartContract) createAcc(APIstub shim.ChaincodeStubInterface, args []string) sc.Response {
 
-	if len(args) != 4 {
+	if len(args) != 3 {
 		return shim.Error("Incorrect number of arguments. Expecting 4")
 	}
 
-	var heal = Heal{Ethadd:args[1], Name: args[2], Bgroup: args[3]}
+	var heal = Heal{Ethadd:args[0], Name: args[1], Bgroup: args[2]}
 	carAsBytes, _ := json.Marshal(heal)
 	APIstub.PutState(args[0], carAsBytes)
 
@@ -169,7 +169,7 @@ func (s *SmartContract) getProfile(APIstub shim.ChaincodeStubInterface, args []s
 
 func (s *SmartContract) editProfile(APIstub shim.ChaincodeStubInterface, args []string) sc.Response {
 
-	if len(args) != 4 {
+	if len(args) != 3 {
 		return shim.Error("Incorrect number of arguments.")
 	}
 	
@@ -178,7 +178,7 @@ func (s *SmartContract) editProfile(APIstub shim.ChaincodeStubInterface, args []
 	json.Unmarshal(fetchprofile, &heal)
 	heal.Name = args[1]
 	heal.Bgroup = args[2]
-	heal.Ethadd = args[3]
+	heal.Ethadd = args[0]
 	
 	fetchprofile, _ = json.Marshal(heal)
 	APIstub.PutState(args[0], fetchprofile)

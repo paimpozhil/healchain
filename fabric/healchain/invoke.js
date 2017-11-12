@@ -81,7 +81,7 @@ var request = {
   //targets: let default to the peer assigned to the client
   chaincodeId: 'fabcar',
   fcn: 'editProfile',
-  args: ['Healer1','Ilam', 'AB+',"0x11223344"],
+  args: ["0x11223344",'Ilam', 'AB+'],
   chainId: 'mychannel',
   txId: tx_id
 };
