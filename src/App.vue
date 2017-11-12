@@ -13,7 +13,13 @@
             <wallet-info></wallet-info>
             <send-tokens></send-tokens>
           </v-layout>
-          <v-layout row>
+          <v-layout row class="pb-5">
+            <wallet-info-user></wallet-info-user>
+          </v-layout>
+          <v-layout row class="pb-5">
+            <donate-blood></donate-blood>
+          </v-layout>
+          <v-layout row class="pb-5">
             <transactions></transactions>
           </v-layout>
         </v-container>
@@ -27,6 +33,8 @@
 
 <script>
 import WalletInfo from './components/WalletInfo.vue'
+import DonateBlood from './components/DonateBlood.vue'
+import WalletInfoUser from './components/WalletInfoUser.vue'
 import SendTokens from './components/SendTokens.vue'
 import Transactions from './components/Transactions.vue'
 
@@ -34,7 +42,9 @@ export default {
 
   components: {
     WalletInfo,
+    WalletInfoUser,
     SendTokens,
+    DonateBlood,
     Transactions
   },
 

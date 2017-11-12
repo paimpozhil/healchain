@@ -9,6 +9,7 @@
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
   "dependencies": {
+    "@xkeshi/vue-qrcode": "^0.3.0",
     "vue": "^2.3.4",
     "vuetify": "^0.13.0"
   },
