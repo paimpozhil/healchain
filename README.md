@@ -30,4 +30,15 @@ UI : Fabric
 * Scanned JPG/PDF files
 * Generalized report values
 
-Private Keys for these records will be available to patient & report added hospital.
+Private Keys for these private health information/ records will be available only to respective patient & report adding hospital/lab.
+
+## Blood Donor Rebates as ERC20 Tokens
+
+### Government transfers HEAL Tokens to Hospitals every year/month in advanced
+Government has particular scale of rebates to blood donors. Govt organization will send HEAL tokens to all hospitals every month in advanced. 
+
+### Hospital Pays Donor Rebates in HEAL Tokens
+Upon receiving blood donations, As per government norms 1 unit blood's rebate value will be calculated in HEAL Tokens and paid to donor's ETH address
+
+### Donor/Patient Pays in HEAL Token
+During health checkups, emergency payments Patient can pay in HEAL Token
