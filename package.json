@@ -1,8 +1,8 @@
 {
-  "name": "func-wallet",
-  "description": "Demo Solidity project for What The Func? Youtube Channel",
+  "name": "healchain",
+  "description": "",
   "version": "1.0.0",
-  "author": "Ed Zynda",
+  "author": "healchain",
   "private": false,
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --progress --hot --host 0.0.0.0",
@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@xkeshi/vue-qrcode": "^0.3.0",
+    "http-server": "^0.10.0",
     "vue": "^2.3.4",
     "vuetify": "^0.13.0"
   },
