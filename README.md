@@ -7,6 +7,7 @@ Basic health information of a person such as Blood group, heart/diabetic problem
 Using hyperledger blockchain, We store a person's both public health information 
 & private medical history. We allow hospitals/labs to issue blood donor rebates as ERC20 based HEAL Tokens. And they will accept HEAL tokens as mode of payment.
 
+## HyperLedger
 ### QR Code based : Public Health Information
 
 ```
@@ -54,7 +55,14 @@ During health checkups, emergency payments Patient can pay in HEAL Token
 ```
 Displays Healchain info / wallet
 ```
-
+### Blood Request
+```
+Receives blood request from user & broadcasts to all other users in a location/circle
+```
+### Pay Hospital/Lab
+```
+When Toshi supports ERC20 tokens, User can send HEAL Tokens to friends, family, hospitals & labs.
+```
 
 
 
