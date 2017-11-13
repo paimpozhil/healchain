@@ -1,12 +1,11 @@
 var http = require('http');
-var Router = require('node-simple-router');
-var router = Router(); // may also be router = new Router(); 
-
+var Router = require('node-simple-router'); 
 var Fabric_Client = require('fabric-client');
+
 var path = require('path');
 var util = require('util');
 var os = require('os');
-
+var router = new Router(); // may also be router = new Router();
 //
 var fabric_client = new Fabric_Client();
 
@@ -33,7 +32,7 @@ router.post('/users', function(request, response) {
 });
 
 
-router.post("/edit/:id", function(req,rep) {
+router.post("/edit", function(req,rep) {
 	Fabric_Client.newDefaultKeyValueStore({ path: store_path
 	}).then((state_store) => {
 		// assign the store to the fabric client
@@ -79,25 +78,23 @@ router.post("/edit/:id", function(req,rep) {
 	  chainId: 'mychannel',
 	  txId: tx_id
 	}; */
-	if(req.post.user == "123") {
-		var request = {
-		  //targets: let default to the peer assigned to the client
-		  chaincodeId: 'fabcar',
-		  fcn: 'createAcc',
-		  args: ["0x222222",'Adhiyan', 'A1B+'],
-		  chainId: 'mychannel',
-		  txId: tx_id
-		};
+	var callfun = "createAcc";
+	if(req.post.create == "1") {
+		callfun = "createAcc";
 	} else {
+		callfun = "editProfile";
+	}
+		
+	
 		var request = {
 		  //targets: let default to the peer assigned to the client
 		  chaincodeId: 'fabcar',
-		  fcn: 'editProfile',
-		  args: ["0x222222",'IlamXX', 'AB+'],
+		  fcn: callfun,
+		  args: [req.post.ethadd,req.post.name, req.post.bgroup],
 		  chainId: 'mychannel',
 		  txId: tx_id
 		};
-	}
+	
 
 
 		// send the transaction proposal to the peers
