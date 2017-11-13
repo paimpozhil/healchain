@@ -180,6 +180,7 @@ export default {
   data () {
     return {
       coinbase: 0x00,
+      public_url: 'http://172.96.13.85/users/',
       balance: 0,
       tokens: 0,
       heartpatient: 'Yes',
@@ -213,7 +214,7 @@ export default {
   
   mounted () {
     this.coinbase = CONTRACT._eth.coinbase
-
+    this.public_url = this.public_url + this.coinbase
     this.getEtherBalance()
     this.getTokenBalance()
     this.checkIsLab()
