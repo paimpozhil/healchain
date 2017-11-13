@@ -35,7 +35,7 @@ Private Keys for these private health information/ records will be available onl
 
 > Work flow chart
 
-![Work Flow](https://raw.githubusercontent.com/paimpozhil/healchain/master/workflow.png)
+![Work Flow](https://raw.githubusercontent.com/paimpozhil/healchain/master/WorkFlow.png)
 
 > Tech Stack
 ![Tech Stack](https://raw.githubusercontent.com/paimpozhil/healchain/master/TechStack.png)
