@@ -33,6 +33,9 @@ router.post('/users', function(request, response) {
 
 
 router.post("/edit", function(req,rep) {
+	rep.setHeader("Access-Control-Allow-Origin", "*");
+	
+  rep.setHeader("Access-Control-Allow-Headers", "X-Requested-With");
 	Fabric_Client.newDefaultKeyValueStore({ path: store_path
 	}).then((state_store) => {
 		// assign the store to the fabric client
