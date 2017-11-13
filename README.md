@@ -1,7 +1,7 @@
 # healchain
 
 ## Problem: 
-Basic health information of a person such as Blood group, heart/diabetic problem info, order donor status are quickly needed when a person is fainted / met in accident. Delay in finding these info may cost a life. In emergency need of initial funds is crucial. 
+Basic health information of a person such as Blood group, heart/diabetic problem info, order donor status are quickly needed when a person is in medical emergency. Delay in finding these info may cost a life. In emergency need of initial funds is crucial. 
 
 ## Solution:
 Using hyperledger blockchain, We store a person's both public health information 
@@ -11,8 +11,8 @@ Using hyperledger blockchain, We store a person's both public health information
 ### QR Code based : Public Health Information
 
 ```
-Stored in: HyperLedger
-UI : Toshi SOS + Fabric
+Stored in: HyperLedger Fabric
+UI : Toshi SOS + Custom JSON API
 ```
 
 * Blood Group      : B+
@@ -24,14 +24,21 @@ UI : Toshi SOS + Fabric
 
 ### Private Health Information
 ```
-Stored in: HyperLedger
-UI : Fabric
+Stored in: HyperLedger Fabric
+UI : Vue
 ```
 
 * Scanned JPG/PDF files
 * Generalized report values
 
 Private Keys for these private health information/ records will be available only to respective patient & report adding hospital/lab.
+
+> Work flow chart
+
+![Work Flow](https://raw.githubusercontent.com/paimpozhil/healchain/master/workflow.png)
+
+> Tech Stack
+![Tech Stack](https://raw.githubusercontent.com/paimpozhil/healchain/master/TechStack.png)
 
 ## Blood Donor Rebates as ERC20 Tokens
 
@@ -66,6 +73,8 @@ When Toshi supports ERC20 tokens, User can send HEAL Tokens to friends, family, 
 
 
 ### Tech Stack
+
+
 
 Payments/notifications: Toshi
 Frontend: Vue
