@@ -79,17 +79,18 @@ When Toshi supports ERC20 tokens, User can send HEAL Tokens to friends, family, 
 
 ### Tech Stack
 
+> BlockChain
 
+* Payments/notifications: Toshi
+* Frontend: Vue
+* BlockChain: Chaincode (Hyperledger Fabric), solidity (Ethereum)
+* Token: ERC20
 
-Payments/notifications: Toshi
-Frontend: Vue
-BlockChain: Chaincode (Hyperledger Fabric), solidity (Ethereum)
-Token: ERC20
+> Server Infra 
 
-Misc: 
-Docker for app deployment
-Node API for Toshi & BlockChain interactions
-Go.
+* Docker for app deployment
+* Node API for Toshi & Ethereum BlockChain interactions
+* Go.
 
 
 > ### Team
