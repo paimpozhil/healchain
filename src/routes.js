@@ -6,4 +6,5 @@ export default {
   '/sendtoken': 'SendTokens',
   '/transactions': 'Transactions',
   '/healreport': 'healreport',
+  '/users': 'user',
 }

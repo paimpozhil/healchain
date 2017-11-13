@@ -1,53 +1,7 @@
-<template>	
+<template>
   <main-layout>
 	  
 	  <v-flex xs6>
-		<v-card class="card--flex-toolbar">
-		  <v-toolbar card class="light-blue">
-			<v-toolbar-title class="white--text">Wallet Info</v-toolbar-title>
-		  </v-toolbar>
-		  <v-list>
-			<v-list-tile>
-				{{ coinbase }}
-			</v-list-tile>  
-			  
-			<v-list-tile>
-			  <v-list-tile-title>
-				Token Balance
-			  </v-list-tile-title>
-			  <v-list-tile-content>
-				{{ tokens }}
-			  </v-list-tile-content>
-			</v-list-tile>
-	  
-		  </v-list>
-		  <v-layout row wrap>
-			  <v-flex xs6 >
-				<VueQrcode :value=coinbase :options="{ size: 200 }"></VueQrcode>		
-			  </v-flex>
-		   </v-layout>
-	  
-		  <v-list>
-			
-			<v-list-tile>
-			  <v-list-tile-title>
-				  Is Lab
-			  </v-list-tile-title>
-			  <v-list-tile-content>
-					<select v-model="islab" @change="SetIsLab()">
-						<option value="Yes">Yes</option>
-						<option value="No">No</option>
-					</select>
-			  </v-list-tile-content>
-			</v-list-tile>
-			
-		  </v-list>
- 
-		</v-card>
-	  </v-flex>
-	
-	
-	  <v-flex xs6  v-show="showIsLab">
 		<v-card class="card--flex-toolbar">
 		  <v-toolbar card class="light-blue">
 			<v-toolbar-title class="white--text">Profile Info</v-toolbar-title>
@@ -151,15 +105,6 @@
 			  </v-list-tile-content>
 			</v-list-tile>
 			
-			<v-list-tile>  
-			  <v-spacer></v-spacer>  
-			  <v-list-tile-action>				 
-				<v-btn primary dark @click.native="sendProfileInfo"> 
-					<i  v-if="loading"  class="fa fa-spinner fa-spin">Processing</i>
-					<i  v-else class="">Send</i>					
-				</v-btn>
-			  </v-list-tile-action>
-			</v-list-tile>
 	  
 		  </v-list>
 	  
@@ -186,17 +131,17 @@ export default {
       sugarpatient: 'Yes',
       islab: 'No',
       showIsLab: false,
-      pname: 'none',
-      ginfo: 'none',
-      allergic: 'none',
-      odonar: 'No',
+      pname: null,
+      ginfo: null,
+      allergic: null,
+      odonar: '',
       showing: false,
       loading: false,
-      dp: 'No',
-      sp: 'No',
-      hpat: 'No', 
+      dp: '',
+      sp: '',
+      hpat: '',
       
-      bgrop: 'A+',
+      bgrop: null,
       dpvistatus: null,
       allergicvistatus: null,
       bgropvistatus: null,
@@ -212,11 +157,12 @@ export default {
   },
   
   mounted () {
-    this.coinbase = CONTRACT._eth.coinbase
+    //this.coinbase = CONTRACT._eth.coinbase
+    this.coinbase = window.location.href.substr(window.location.href.lastIndexOf('/') + 1);
 
-    this.getEtherBalance()
-    this.getTokenBalance()
-    this.checkIsLab()
+    //this.getEtherBalance()
+    //this.getTokenBalance()
+    //this.checkIsLab()
     this.updateProfile()
 
     CONTRACT.Transfer((err, res) => {
@@ -232,8 +178,7 @@ export default {
 		axios.get("http://172.96.13.85:1234/profile/"+this.coinbase).then(response => {
 			console.log(response);
 			console.log(response.data);
-			this.showing=false;
-			if(response.data){			
+			//if(response.statusText=='OK'){				
 				
 				this.allergic=response.data.allergic;
 				this.pname=response.data.name;
@@ -243,7 +188,8 @@ export default {
 				this.odonar=response.data.og;
 				this.dp=response.data.dp;
 				this.sp=response.data.sp;
-			}
+				this.showing=false;
+			//}
 		}).catch( error => { 
 		  console.log(error);  
 		});		
@@ -268,14 +214,6 @@ export default {
 		})
 	},
 	
-    getEtherBalance () {
-      CONTRACT._eth.getBalance(this.coinbase, (err, bal) => {
-        if (!err) {
-          this.balance = web3.fromWei(bal, 'ether').toNumber()
-        }
-        console.log(err)
-      })
-    },
 
     sendProfileInfo () {
 		 this.loading = true;
@@ -315,14 +253,6 @@ export default {
 		
 	},
 	
-    getTokenBalance () {
-      CONTRACT.balanceOf(this.coinbase, (err, tkns) => {
-        if (!err) {
-          this.tokens = web3.fromWei(tkns, 'ether').toNumber()
-        }
-        console.log(err)
-      })
-    }
   }
 }
 

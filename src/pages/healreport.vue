@@ -32,7 +32,7 @@
 				Report Name :
 			  </v-list-tile-title>
 			  <v-list-tile-content>  
-				<v-text-field label="0" single-line v-model="unit"></v-text-field>   
+				<v-text-field label="Enter Here" single-line v-model="unit"></v-text-field>   
 			  </v-list-tile-content>
 			</v-list-tile>
 	  	  
@@ -42,6 +42,15 @@
 			  </v-list-tile-title>
 			  <v-list-tile-content>  
 				<input type="file" > 
+			  </v-list-tile-content>
+			</v-list-tile>
+			
+			<v-list-tile>
+			  <v-list-tile-title>
+				Report Notes :
+			  </v-list-tile-title>
+			  <v-list-tile-content>  
+				<v-text-field label="Enter Here" single-line v-model="rnotes"></v-text-field>   
 			  </v-list-tile-content>
 			</v-list-tile>
 			
@@ -71,135 +80,6 @@
 		</v-card>
 	  </v-flex>
 	   
-	  <v-flex xs6>
-		<v-card class="card--flex-toolbar">
-		  <v-toolbar card class="light-blue">
-			<v-toolbar-title class="white--text">Heal Report</v-toolbar-title>
-		  </v-toolbar>
-		  <v-list>			  			
-			
-			<v-list-tile>
-			  <v-list-tile-title>
-				Diabetic Patient :
-			  </v-list-tile-title>
-			  <v-list-tile-content>  
-				<select v-model="dp">
-				  <option disabled value="">Select </option>
-				  <option value="1">Yes</option>
-				  <option value="0">No</option>
-				</select>
-								
-				  <div class="fleft">
-					<input type="radio" id="one" value="Private" v-model="dpvistatus">
-					<label for="one">Private</label>
-					<input type="radio" id="two" value="Public" v-model="dpvistatus">
-					<label for="two">Public</label>
-				</div>
-			  </v-list-tile-content>
-			</v-list-tile>
-			
-			<v-list-tile>
-			  <v-list-tile-title>
-				Organ Donor :
-			  </v-list-tile-title>
-			  <v-list-tile-content>  
-				
-				<select v-model="odonar">
-				  <option disabled value="">Select </option>
-				  <option value="1">Yes</option>
-				  <option value="0">No</option>
-				</select>  
-							
-							
-				  <div class="fleft">
-					<input type="radio" id="one" value="Private" v-model="odonarvistatus">
-					<label for="one">Private</label>
-					<input type="radio" id="two" value="Public" v-model="odonarvistatus">
-					<label for="two">Public</label>
-				</div>
-			  </v-list-tile-content>
-			</v-list-tile>
-			
-			<v-list-tile>
-			  <v-list-tile-title>
-				Heart Patient :
-			  </v-list-tile-title>
-			  <v-list-tile-content>  
-				
-				<select v-model="hpat">
-				  <option disabled value="">Select </option>
-				  <option value="1">Yes</option>
-				  <option value="0">No</option>
-				</select>
-				
-				  <div class="fleft">
-					<input type="radio" id="one" value="Private" v-model="hpatvistatus">
-					<label for="one">Private</label>
-					<input type="radio" id="two" value="Public" v-model="hpatvistatus">
-					<label for="two">Public</label>
-				</div>
-			  </v-list-tile-content>
-			</v-list-tile>
-			
-			
-			<v-list-tile>
-			  <v-list-tile-title>
-				Blood Group :
-			  </v-list-tile-title>
-			  <v-list-tile-content>  
-				
-				<select v-model="bgrop">
-				  <option selected value="A+">A+</option>
-				  <option value="B+">B+</option>
-				  <option value="O+">O+</option>
-				</select>
-							
-				  <div class="fleft">
-					<input type="radio" id="one" value="Private" v-model="bgropvistatus">
-					<label for="one">Private</label>
-					<input type="radio" id="two" value="Public" v-model="bgropvistatus">
-					<label for="two">Public</label>
-				</div>
-			  </v-list-tile-content>
-			</v-list-tile>
-			
-			
-			<v-list-tile>
-			  <v-list-tile-title>
-				Allergic To :
-			  </v-list-tile-title>
-			  <v-list-tile-content>  
-				<v-text-field label="Enter Here" single-line v-model="allergic"></v-text-field>   
-						
-				  <div class="fleft">
-					<input type="radio" id="one" value="Private" v-model="allergicvistatus">
-					<label for="one">Private</label>
-					<input type="radio" id="two" value="Public" v-model="allergicvistatus">
-					<label for="two">Public</label>
-				</div>
-			  </v-list-tile-content>
-			</v-list-tile>
-			
-			<v-list-tile>
-			  <v-list-tile-title>
-				General Info :
-			  </v-list-tile-title>
-			  <v-list-tile-content>  
-				<v-text-field label="Enter Here" single-line v-model="ginfo"></v-text-field>   
-			  </v-list-tile-content>
-			</v-list-tile>
-			
-			<v-list-tile>  
-			  <v-spacer></v-spacer>  
-			  <v-list-tile-action>
-				<v-btn primary dark @click.native="sendTokens">Send</v-btn>
-			  </v-list-tile-action>
-			</v-list-tile>
-	  
-		  </v-list>
-	  
-		</v-card>
-	  </v-flex>
 	</main-layout>
 </template>
 <script>
@@ -207,6 +87,8 @@
 import MainLayout from '../layouts/Main.vue'
 import { CONTRACT } from '../contract'
 import _ from 'lodash'
+import axios from 'axios';
+
 
 export default {
   data () {
@@ -215,6 +97,7 @@ export default {
       addr: null,
       unit: null,
       token: null,
+      rnotes: null,
       vstatus: null,
       ginfo: null,
       allergic: null,
@@ -247,7 +130,7 @@ export default {
 
   methods: {
     sendTokens () {
-      if (!web3.isAddress(this.addr)) {
+     /* if (!web3.isAddress(this.addr)) {
         alert('Invalid address!')
         this.addr = null
         return
@@ -257,16 +140,15 @@ export default {
         alert('Invalid unit!')
         this.unit = null
         return
-      }
-      CONTRACT.transfer(this.addr, web3.toWei(this.unit*1000, 'ether'), (err, res) => {
-        if (!err) {
-          console.log(res)
-          this.addr = this.unit = null
-          return
-        }
-        console.log(err)
-        this.addr = this.unit = null
-      })
+      }*/
+      
+		axios.get("http://172.96.13.85:1234/profile/"+this.coinbase).then(response => {
+			console.log(response);
+			this.results = response.data.results;
+		}).catch( error => { 
+		  console.log(error);  
+		});
+      
     },    
     getTokenBalance () {
       CONTRACT.balanceOf(this.coinbase, (err, tkns) => {

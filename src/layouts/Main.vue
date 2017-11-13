@@ -1,28 +1,29 @@
 <template>
+	
   <div class="container">
+		<v-layout wrap justify-space-around align-center>
+			<img src="/src/assets/logo.jpg" alt="John">
+		</v-layout>
 	<!-- Handlebars template -->
-	<nav class="contact" v-if="isLab === 1"> 
+	<nav  v-show="showing" class="contact" v-if="isLab === 1"> 
         <v-link href="/">Home</v-link>
         <v-link href="/sendtoken">Send Token</v-link>
         <v-link href="/transactions">History</v-link>
         <v-link href="/donateblood">Donor Rebate</v-link>
         <v-link href="/healreport">Heal Report</v-link>
 	</nav>
-	<nav class="contact" v-else> 
+	<nav v-show="showing" class="contact" v-else> 
         <v-link href="/">Home</v-link>
         <v-link href="/sendtoken">Send Token</v-link>
         <v-link href="/transactions">History</v-link>
 	</nav>
-
-      </nav>
-
     <slot></slot>
   </div>
 </template>
 
 <script>
-  import VLink from '../components/VLink.vue'
-import { CONTRACT } from '../contract'
+	import VLink from '../components/VLink.vue'
+	import { CONTRACT } from '../contract'
 
   export default {
     components: {
@@ -32,11 +33,13 @@ import { CONTRACT } from '../contract'
   data () {
     return {
       isLab: 0,
+      showing: true,
     }
   },
 
   mounted () {
     this.checkIsLab()
+    
   },
 
   methods: {
@@ -46,6 +49,9 @@ import { CONTRACT } from '../contract'
 			 this.isLab =  1;
 		  }
       })
+      if(window.location.href.indexOf("users") > -1) {			
+			this.showing=false;
+		} 
     },
     setIsLab () {
       CONTRACT.set_lab(1, (err, bal) => {

@@ -19,10 +19,20 @@ const app = new Vue({
   },
   computed: {
     ViewComponent () {
-      const matchingView = routes[this.currentRoute]
-      return matchingView
-        ? require('./pages/' + matchingView + '.vue')
-        : require('./pages/404.vue')
+		const matchingView = routes[this.currentRoute]
+			  console.log(routes);
+		console.log(matchingView);
+		if(window.location.href.indexOf("users") > -1) {			
+			const matchingView = 'user';
+			return matchingView
+				? require('./pages/' + matchingView + '.vue')
+				: require('./pages/404.vue')
+		console.log(matchingView);
+		} 
+		console.log(matchingView);
+		return matchingView
+			? require('./pages/' + matchingView + '.vue')
+			: require('./pages/404.vue')
     }
   },
   render (h) {
