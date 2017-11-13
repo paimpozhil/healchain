@@ -2,7 +2,7 @@
 > # healchain
 
 ### NITI Aayog & Proffer Hackathon Submission  
-![Work Flow] (https://raw.githubusercontent.com/paimpozhil/healchain/master/Logo-2.png)
+![Work Flow](https://raw.githubusercontent.com/paimpozhil/healchain/master/Logo-2.png)
 
 ## Problem: 
 Basic health information of a person such as Blood group, heart/diabetic problem info, order donor status are quickly needed when a person is in medical emergency. Delay in finding these info may cost a life. In emergency need of initial funds is crucial. 
