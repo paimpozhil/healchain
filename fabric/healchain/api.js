@@ -90,7 +90,7 @@ router.post("/edit", function(req,rep) {
 		  //targets: let default to the peer assigned to the client
 		  chaincodeId: 'fabcar',
 		  fcn: callfun,
-		  args: [req.post.ethadd,req.post.name, req.post.bgroup, req.post.hp, req.post.sp, req.post.medicalhistory],
+		  args: [req.post.ethadd,req.post.name, req.post.bgroup, req.post.hp, req.post.sp, req.post.og, req.post.dp, req.post.medicalhistory, req.post.medicalhistoryview, req.post.allergic, req.post.generalinfo],
 		  chainId: 'mychannel',
 		  txId: tx_id
 		};
@@ -200,6 +200,9 @@ router.post("/edit", function(req,rep) {
 
 router.get("/profile/:id", function(request, response) {
 	rq = request; rp=response;
+	 rp.setHeader("Access-Control-Allow-Origin", "*");
+	
+  rp.setHeader("Access-Control-Allow-Headers", "X-Requested-With");
 			Fabric_Client.newDefaultKeyValueStore({ path: store_path
 			}).then((state_store) => {
 				// assign the store to the fabric client
