@@ -101,3 +101,6 @@ When Toshi supports ERC20 tokens, User can send HEAL Tokens to friends, family, 
 * Suresh VR
 ```
 
+> Credits
+whatthefunc Youtube Channel.
+
