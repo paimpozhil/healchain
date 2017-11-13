@@ -31,7 +31,7 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-
+	
 	"github.com/hyperledger/fabric/core/chaincode/shim"
 	sc "github.com/hyperledger/fabric/protos/peer"
 )
@@ -48,7 +48,12 @@ type Heal struct {
 	Bgroup string `json:"bgroup"`
 	HP string `json:"hp"`
 	SP string `json:"sp"`
+	DP string `json:"dp"`
+	OG string `json:"og"`
+	Allergic string `json:"allergic"`
+	Generalinfo string `json:"generalinfo"`
 	MedicalHistory string `json:"medicalhistory"`
+	MedicalHistoryview string `json:"medicalhistoryview"`
 }
 
 /*
@@ -95,11 +100,11 @@ func (s *SmartContract) initLedger(APIstub shim.ChaincodeStubInterface) sc.Respo
 //Create new account for users
 func (s *SmartContract) createAcc(APIstub shim.ChaincodeStubInterface, args []string) sc.Response {
 
-	if len(args) != 6 {
+	if len(args) != 11 {
 		return shim.Error("Incorrect number of arguments. Expecting 6")
 	}
 
-	var heal = Heal{Name: args[1], Bgroup: args[2], HP: args[3], SP: args[4], MedicalHistory: args[5]}
+	var heal = Heal{Name: args[1], Bgroup: args[2], HP: args[3], SP: args[4],OG: args[5],DP: args[6], MedicalHistory: args[7], MedicalHistoryview: args[8], Allergic: args[9], Generalinfo: args[10]}
 	healerAsBytes, _ := json.Marshal(heal)
 	APIstub.PutState(args[0], healerAsBytes)
 
@@ -121,7 +126,7 @@ func (s *SmartContract) getProfile(APIstub shim.ChaincodeStubInterface, args []s
 //Edit existing profile
 func (s *SmartContract) editProfile(APIstub shim.ChaincodeStubInterface, args []string) sc.Response {
 
-	if len(args) != 6 {
+	if len(args) != 11 {
 		return shim.Error("Incorrect number of arguments.")
 	}
 	
@@ -132,7 +137,12 @@ func (s *SmartContract) editProfile(APIstub shim.ChaincodeStubInterface, args []
 	heal.Bgroup = args[2]
 	heal.HP = args[3]
 	heal.SP = args[4]
-	heal.MedicalHistory = args[5]
+	heal.OG = args[5]
+	heal.DP = args[6]
+	heal.MedicalHistory = args[7]
+	heal.MedicalHistoryview = args[8]
+	heal.Allergic = args[9]
+	heal.Generalinfo = args[10]
 	
 	fetchprofile, _ = json.Marshal(heal)
 	APIstub.PutState(args[0], fetchprofile)
