@@ -90,7 +90,7 @@ router.post("/edit", function(req,rep) {
 		  //targets: let default to the peer assigned to the client
 		  chaincodeId: 'fabcar',
 		  fcn: callfun,
-		  args: [req.post.ethadd,req.post.name, req.post.bgroup],
+		  args: [req.post.ethadd,req.post.name, req.post.bgroup, req.post.hp, req.post.sp, req.post.medicalhistory],
 		  chainId: 'mychannel',
 		  txId: tx_id
 		};
