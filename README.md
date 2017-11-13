@@ -38,6 +38,7 @@ Private Keys for these private health information/ records will be available onl
 ![Work Flow](https://raw.githubusercontent.com/paimpozhil/healchain/master/WorkFlow.png)
 
 > Tech Stack
+
 ![Tech Stack](https://raw.githubusercontent.com/paimpozhil/healchain/master/TechStack.png)
 
 ## Blood Donor Rebates as ERC20 Tokens
@@ -87,10 +88,11 @@ Node API for Toshi & BlockChain interactions
 Go.
 
 
-### Team
- 
-> PaimPozhil B 
-> KarthiKeyan P
-> Ilampirai B
-> Suresh VR
+> ### Team
+ ```
+* PaimPozhil B 
+* KarthiKeyan P
+* Ilampirai B
+* Suresh VR
+```
 
