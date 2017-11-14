@@ -6,7 +6,7 @@
 
 ## Demo
 http://172.96.13.85/
-Toshi Dev app : search for HealChain
+* Toshi Dev app : search for HealChain
 
 ## Problem: 
 Basic health information of a person such as Blood group, heart/diabetic problem info, order donor status are quickly needed when a person is in medical emergency. Delay in finding these info may cost a life. In emergency need of initial funds is crucial. 
