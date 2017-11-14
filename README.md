@@ -81,8 +81,16 @@ When Toshi supports ERC20 tokens, User can send HEAL Tokens to friends, family, 
 ```
 > How it works
 
-<img src="https://raw.githubusercontent.com/paimpozhil/healchain/master/SS0%20-%20Toshi-app-SOS.png" width="200px"> <img src="https://raw.githubusercontent.com/paimpozhil/healchain/master/SS1%20-%20hospital-dashboard.jpg" width="200px"> <img src="https://raw.githubusercontent.com/paimpozhil/healchain/master/SS2%20-%20hospital-medical-records-store.jpg" width="200px"> <img src="https://raw.githubusercontent.com/paimpozhil/healchain/master/SS3-hospital-blood-donor-rebates.jpg" width="200px"> <img src="https://raw.githubusercontent.com/paimpozhil/healchain/master/SS4%20-%20hospital-request-payment-heal-tokens.jpg" width="200px"> <img src="https://raw.githubusercontent.com/paimpozhil/healchain/master/SS5%20-%20user-wallet.jpg" width="200px">
-Youtube presentation (Too short and took in a hurry!) https://www.youtube.com/watch?v=xENyytp5f_E&list=PL5qoO4Db_39W9uYZzvxe45eaU5Vb6mwt4
+<img src="https://raw.githubusercontent.com/paimpozhil/healchain/master/SS0%20-%20Toshi-app-SOS.png" width="200px"> <img src="https://raw.githubusercontent.com/paimpozhil/healchain/master/SS5%20-%20user-wallet.jpg" width="200px">
+
+<img src="https://raw.githubusercontent.com/paimpozhil/healchain/master/SS1%20-%20hospital-dashboard.jpg" width="200px"> <img src="https://raw.githubusercontent.com/paimpozhil/healchain/master/SS2%20-%20hospital-medical-records-store.jpg" width="200px"> 
+
+<img src="https://raw.githubusercontent.com/paimpozhil/healchain/master/SS3-hospital-blood-donor-rebates.jpg" width="200px"> <img src="https://raw.githubusercontent.com/paimpozhil/healchain/master/SS4%20-%20hospital-request-payment-heal-tokens.jpg" width="200px">
+
+> Youtube presentation (Too short & took in a hurry!)
+
+https://www.youtube.com/watch?v=xENyytp5f_E&list=PL5qoO4Db_39W9uYZzvxe45eaU5Vb6mwt4
+
 ### Tech Stack
 
 > BlockChain
