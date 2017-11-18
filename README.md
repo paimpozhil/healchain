@@ -5,7 +5,7 @@
 ![Work Flow](https://raw.githubusercontent.com/paimpozhil/healchain/master/Logo-2.png)
 
 ## Demo
-http://172.96.13.85/
+http://172.96.13.85/ ( you need MetaMask/Toshi to view this url )
 * Toshi Dev app : search for HealChain
 
 ## Problem: 
