@@ -1,8 +1,13 @@
 
 > # healchain
 
-### NITI Aayog & Proffer Hackathon Submission  
+> # NITI Aayog & Proffer Hackathon Submission  
 ![Work Flow](https://raw.githubusercontent.com/paimpozhil/healchain/master/Logo-2.png)
+
+> # Hackathon Result 
+HealChain WON non-monetary prize! "IBM Blockchain Internship"
+
+https://blog.proffer.network/proffer-hackathon-winners-2017-1adb2078a691
 
 ## Demo
 http://172.96.13.85/ ( you need MetaMask/Toshi to view this url )
@@ -109,8 +114,8 @@ https://www.youtube.com/watch?v=xENyytp5f_E&list=PL5qoO4Db_39W9uYZzvxe45eaU5Vb6m
 
 > ### Team
  ```
-* PaimPozhil B 
-* KarthiKeyan P
+* PaimPozhil B  > paimpozhil@gmail.com , skype: paimpozhil
+* KarthiKeyan P > karthixinbox@gmail.com , skype: mrkart , linkedin: mrkart
 * Ilampirai B
 * Suresh VR
 ```
